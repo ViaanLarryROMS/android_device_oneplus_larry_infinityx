@@ -17,19 +17,13 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # InfinityX Flags
 TARGET_BOOT_ANIMATION_RES := 1080
-WITH_GAPPS := false
-TARGET_SHIPS_FULL_GAPPS := false
-TARGET_BUILD_GOOGLE_TELEPHONY := false
-TARGET_SUPPORTS_BLUR := true
-USE_MOTO_CALCULATOR := true
-TARGET_FACE_UNLOCK_SUPPORTED := true
-TARGET_BUILD_VIMUSIC := true
+WITH_GAPPS := true
 INFINITY_MAINTAINER := Ansh Agnihotri
 INFINITY_BUILD_TYPE := UNOFFICIAL
 
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_larry
+PRODUCT_NAME := infinity_larry
 PRODUCT_DEVICE := larry
 PRODUCT_BRAND := oneplus
 PRODUCT_MODEL := CPH2467
