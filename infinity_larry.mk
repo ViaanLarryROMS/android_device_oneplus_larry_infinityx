@@ -18,9 +18,10 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 # InfinityX Flags
 TARGET_BOOT_ANIMATION_RES := 1080
 WITH_GAPPS := false
-INFINITY_MAINTAINER := Ansh Agnihotri
+INFINITY_MAINTAINER := Ansh_Agnihotri
 INFINITY_BUILD_TYPE := UNOFFICIAL
-
+TARGET_SUPPORTS_BLUR := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := infinity_larry
