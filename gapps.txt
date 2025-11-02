@@ -15,6 +15,13 @@ $(call inherit-product, vendor/infinity/config/common_full_phone.mk)
 #gapps
 WITH_GMS := true
 
+# InfinityX Flags
+TARGET_BOOT_ANIMATION_RES := 1080
+INFINITY_MAINTAINER := Ansh
+INFINITY_BUILD_TYPE := UNOFFICIAL
+TARGET_SUPPORTS_BLUR := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+
 # Inherit from larry device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
