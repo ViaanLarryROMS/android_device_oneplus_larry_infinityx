@@ -1,37 +1,59 @@
-#
-# Copyright (C) 2023 The LineageOS Project
-#
 # SPDX-License-Identifier: Apache-2.0
-#
 
-# Inherit from those products. Most specific first.
+# ----------------------------------------------------------
+# Base Product Configurations
+# ----------------------------------------------------------
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-TARGET_SUPPORTS_OMX_SERVICE := false
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common LineageOS stuff
+# ----------------------------------------------------------
+# Common InfinityX Vendor Config
+# ----------------------------------------------------------
 $(call inherit-product, vendor/infinity/config/common_full_phone.mk)
 
-# Inherit from larry device
+# ----------------------------------------------------------
+# Device Specific Config
+# ----------------------------------------------------------
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-# InfinityX Flags
+# ----------------------------------------------------------
+# InfinityX Maintainer Info
+# ----------------------------------------------------------
 TARGET_BOOT_ANIMATION_RES := 1080
-WITH_GAPPS := false
-INFINITY_MAINTAINER := Ansh
+INFINITY_MAINTAINER := Sujal
 INFINITY_BUILD_TYPE := UNOFFICIAL
 TARGET_SUPPORTS_BLUR := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
 
-# Device identifier. This must come after all inclusions.
+# ----------------------------------------------------------
+# GApps / Vanilla Toggle
+# ----------------------------------------------------------
+WITH_GMS ?= true
+
+ifeq ($(WITH_GMS),true)
+    # GApps build (default)
+    WITH_GAPPS := true
+    TARGET_INCLUDE_GOOGLE_APPS := true
+    $(call inherit-product, $(LOCAL_PATH)/gapps.txt)
+else
+    # Vanilla build
+    WITH_GAPPS := false
+    TARGET_INCLUDE_GOOGLE_APPS := false
+endif
+
+# ----------------------------------------------------------
+# Product Info
+# ----------------------------------------------------------
 PRODUCT_NAME := infinity_larry
 PRODUCT_DEVICE := larry
 PRODUCT_BRAND := oneplus
 PRODUCT_MODEL := CPH2467
 PRODUCT_MANUFACTURER := oneplus
-
 PRODUCT_GMS_CLIENTID_BASE := android-oppo
 
+# ----------------------------------------------------------
+# Build Fingerprint / Props
+# ----------------------------------------------------------
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="OP5958L1-user 14 UKQ1.230924.001 T.R4T2.1cd4793-227bc-40edf release-keys" \
     BuildFingerprint=OnePlus/CPH2467/OP5958L1:14/UKQ1.230924.001/T.R4T2.1cd4793-227bc-40edf:user/release-keys \
