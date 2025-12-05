@@ -15,16 +15,20 @@ $(call inherit-product, vendor/infinity/config/common_full_phone.mk)
 # Inherit from larry device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-# InfinityX Flags
-TARGET_BOOT_ANIMATION_RES := 1080
-WITH_GAPPS := false
-INFINITY_MAINTAINER := Sujal
-INFINITY_BUILD_TYPE := UNOFFICIAL
-TARGET_SUPPORTS_BLUR := true
-TARGET_FACE_UNLOCK_SUPPORTED := true
+# Add in your overlay (overlay/packages/apps/Settings/res/values/strings.xml)
+
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2025 Project Matrixx
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Android version screen, build maintainer -->
+    <string name="sujal">Diddy</string>
+</resources>
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := infinity_larry
+PRODUCT_NAME := matrixx_larry
 PRODUCT_DEVICE := larry
 PRODUCT_BRAND := oneplus
 PRODUCT_MODEL := CPH2467
@@ -39,9 +43,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceProduct=OP5958L1 \
     SystemDevice=OP5958L1 \
     SystemName=OP5958L1
-    PRODUCT_SYSTEM_PROPERTIES += \
-    ro.product.marketname=OnePlus Nord CE 3 Lite
-    ro.infinity.soc=Snapdragon 695 5G
-    ro.infinity.battery=5000 mAh
-    ro.infinity.display=1080 x 2400, 120 Hz
-    ro.infinity.camera=108MP + 2MP + 2MP + 16MP
+  
