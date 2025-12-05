@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/infinity_larry.mk
+    $(LOCAL_DIR)/matrixx_larry.mk
 
 COMMON_LUNCH_CHOICES := \
-    infinity_larry-user \
-    infinity_larry-userdebug \
-    infinity_larry-eng
+    matrixx_larry-user \
+    matrixx_larry-userdebug \
+    matrixx_larry-eng
