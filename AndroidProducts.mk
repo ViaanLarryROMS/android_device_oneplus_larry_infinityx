@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/infinity_larry.mk
+    $(LOCAL_DIR)/lunaris_larry.mk
 
 COMMON_LUNCH_CHOICES := \
-    infinity_larry-user \
-    infinity_larry-userdebug \
-    infinity_larry-eng
+    lunaris_larry-user \
+    lunaris_larry-userdebug \
+    lunaris_larry-eng
