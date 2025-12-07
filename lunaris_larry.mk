@@ -6,24 +6,19 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# ----------------------------------------------------------
-# Common InfinityX Vendor Config
-# ----------------------------------------------------------
-$(call inherit-product, vendor/infinity/config/common_full_phone.mk)
+
+$(call inherit-product, vendor/lunaris/config/common_full_phone.mk)
 
 # ----------------------------------------------------------
 # Device Specific Config
 # ----------------------------------------------------------
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-# ----------------------------------------------------------
-# InfinityX Maintainer Info
-# ----------------------------------------------------------
-TARGET_BOOT_ANIMATION_RES := 1080
-INFINITY_MAINTAINER := Sujal
-INFINITY_BUILD_TYPE := UNOFFICIAL
-TARGET_SUPPORTS_BLUR := true
-TARGET_FACE_UNLOCK_SUPPORTED := true
+
+ro.paranoid.maintainer=sujal
+
+
+
 
 # ----------------------------------------------------------
 # GApps / Vanilla Toggle
@@ -50,6 +45,7 @@ PRODUCT_BRAND := oneplus
 PRODUCT_MODEL := CPH2467
 PRODUCT_MANUFACTURER := oneplus
 PRODUCT_GMS_CLIENTID_BASE := android-oppo
+TARGET_ENABLE_BLUR := true
 
 # ----------------------------------------------------------
 # Build Fingerprint / Props
@@ -61,9 +57,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceProduct=OP5958L1 \
     SystemDevice=OP5958L1 \
     SystemName=OP5958L1
-PRODUCT_SYSTEM_PROPERTIES += \
-    ro.product.marketname=OnePlus Nord CE 3 Lite
-    ro.infinity.soc=Snapdragon 695 5G
-    ro.infinity.battery=5000 mAh
-    ro.infinity.display=1080 x 2400, 120 Hz
-    ro.infinity.camera=108MP + 2MP + 2MP + 16MP
