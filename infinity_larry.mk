@@ -25,9 +25,6 @@ INFINITY_BUILD_TYPE := UNOFFICIAL
 TARGET_SUPPORTS_BLUR := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
 
-# ----------------------------------------------------------
-# GApps / Vanilla Toggle
-# ----------------------------------------------------------
 WITH_GAPPS := true
 # ----------------------------------------------------------
 # Product Info
