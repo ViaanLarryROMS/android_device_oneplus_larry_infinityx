@@ -20,7 +20,7 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 # InfinityX Maintainer Info
 # ----------------------------------------------------------
 TARGET_BOOT_ANIMATION_RES := 1080
-INFINITY_MAINTAINER := Sujal
+INFINITY_MAINTAINER := Viaan_Thakur
 INFINITY_BUILD_TYPE := UNOFFICIAL
 TARGET_SUPPORTS_BLUR := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
@@ -28,19 +28,7 @@ TARGET_FACE_UNLOCK_SUPPORTED := true
 # ----------------------------------------------------------
 # GApps / Vanilla Toggle
 # ----------------------------------------------------------
-WITH_GMS ?= true
-
-ifeq ($(WITH_GMS),true)
-    # GApps build (default)
-    WITH_GAPPS := true
-    TARGET_INCLUDE_GOOGLE_APPS := true
-    $(call inherit-product, $(LOCAL_PATH)/gapps.txt)
-else
-    # Vanilla build
-    WITH_GAPPS := false
-    TARGET_INCLUDE_GOOGLE_APPS := false
-endif
-
+WITH_GAPPS := true
 # ----------------------------------------------------------
 # Product Info
 # ----------------------------------------------------------
@@ -63,7 +51,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     SystemName=OP5958L1
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.product.marketname=OnePlus Nord CE 3 Lite
-    ro.infinity.soc=Snapdragon 695 5G
+    ro.infinity.soc=Qualcomm Snapdragon® 695 5G
     ro.infinity.battery=5000 mAh
-    ro.infinity.display=1080 x 2400, 120 Hz
-    ro.infinity.camera=108MP + 2MP + 2MP + 16MP
+    ro.infinity.display=IPS LCD (2400x1080) FHD+, 120 Hz
+    ro.infinity.camera=108MP + 2MP + 2MP + 16MP (Front)
