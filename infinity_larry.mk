@@ -20,7 +20,7 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 # InfinityX Maintainer Info
 # ----------------------------------------------------------
 TARGET_BOOT_ANIMATION_RES := 1080
-INFINITY_MAINTAINER := Sujal
+INFINITY_MAINTAINER := SUJΛL
 INFINITY_BUILD_TYPE := UNOFFICIAL
 TARGET_SUPPORTS_BLUR := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
