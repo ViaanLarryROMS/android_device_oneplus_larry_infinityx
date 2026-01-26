@@ -15,6 +15,13 @@ $(call inherit-product, vendor/infinity/config/common_full_phone.mk)
 #gapps
 WITH_GMS := true
 
+else
+    # Vanilla build
+    WITH_GAPPS := false
+    TARGET_INCLUDE_GOOGLE_APPS := false
+endif
+
+
 # InfinityX Flags
 TARGET_BOOT_ANIMATION_RES := 1080
 INFINITY_MAINTAINER := SUJΛL
