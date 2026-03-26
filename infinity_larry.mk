@@ -16,6 +16,8 @@ $(call inherit-product, vendor/infinity/config/common_full_phone.mk)
 # ----------------------------------------------------------
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
+$(call inherit-product, hardware/dolby/dolby.mk)
+
 # ----------------------------------------------------------
 # InfinityX Maintainer Info
 # ----------------------------------------------------------
